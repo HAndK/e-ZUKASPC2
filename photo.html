@@ -4,22 +4,28 @@
 <meta charset="UTF-8">
 <title>写真選択</title>
 <h1>好きな絵をえらんでね♪</h1>
-<link type="text/css" rel="stylesheet" href="photo.css">
+<link type="text/css" rel="stylesheet" href="css/photo.css">
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
 </head>
 <body id=back2>
-<a href="main.html"><img src="fish.jpg" border="1"></a>
-<a href="main.html"><img src="snail.jpg" border="1"></a>
-<a href="main.html"><img src="kappa.jpg" border="1"></a>
-<a href="main.html"><img src="whale.jpg" border="1"></a>
-<a href="main.html"><img src="beetle.jpg" border="1"></a>
-<a href="main.html"><img src="ice.jpg" border="1"></a>
-<a href="main.html"><img src="rocket.jpg" border="1"></a>
-<a href="main.html"><img src="ogre.jpg" border="1"></a>
-<a href="main.html"><img src="car.jpg" border="1"></a>
-<a href="main.html"><img src="mushroom.jpg" border="1"></a>
+<a href="main.html"><img src="img/fish.jpg" border="1"></a>
+<a href="main.html"><img src="img/snail.jpg" border="1"></a>
+<a href="main.html"><img src="img/kappa.jpg" border="1"></a>
+<a href="main.html"><img src="img/whale.jpg" border="1"></a>
+<a href="main.html"><img src="img/beetle.jpg" border="1"></a>
+<a href="main.html"><img src="img/ice.jpg" border="1"></a>
+<a href="main.html"><img src="img/rocket.jpg" border="1"></a>
+<a href="main.html"><img src="img/ogre.jpg" border="1"></a>
+<a href="main.html"><img src="img/car.jpg" border="1"></a>
+<a href="main.html"><img src="img/mushroom.jpg" border="1"></a>
 <form>
 <input id="btn" type="button" value="メニュー画面" onclick="location.href='index.html'">
 </form>
+<script>
+  $('a img').on("click", function() {
+    alert($(this).attr('src'));
+  });
+</script>
 </body>
 </html>
 

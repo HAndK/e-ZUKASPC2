@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>スタート画面</title>
-<link type="text/css" rel="stylesheet" href="index.css">
-<script type="text/javascript" src="jquery-2.1.1.js"></script>
+<link type="text/css" rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
 <script type="text/javascript">
 //BACKGROUND
 $(function(){
-　$("#back").css("background-position" , "0% bottom"); 
+  $("#back").css("background-position" , "0% bottom"); 
     var scrollSpeed = -1;//px 移動する量
     var imgWidth = 567;//画像の幅
     var posX = 0;//背景のスタート位置　
    setInterval(function(){
-　   if(posX >= imgWidth){ posX = 0; }
-　　    posX += scrollSpeed;
+     if(posX >= imgWidth){ posX = 0; }
+        posX += scrollSpeed;
   $("#back").css("background-position" , posX+"px bottom")
      } , 50);
 });
