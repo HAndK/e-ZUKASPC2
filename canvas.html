@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+
+  <!-- fabric.jsの読込み -->
+  <script type="text/javascript" src="js/fabric.js"></script>
+</head>
+<body>
+  <form>
+  <!-- canvas要素を用意 -->
+    <canvas id="canvas" width="300" height="300" style="border: 1px soild;"></canvas>
+    <button type="button" id="select">選択</button>
+    <button type="button" id="save">保存</button>
+    <button type="button" id="load">再開</button>
+    <button onclick="canvas.clear().renderAll()">削除</button>
+    <button type="button" onclick="alert(JSON.stringify(canvas))">JSONアラート</button>
+    <button type="button" onclick="alert(canvas.toSVG())">SVG</button>
+  </form>
+  <script type="text/javascript">
+
+  <!-- Canvasオブジェクトを作成 -->
+    var canvas = new fabric.Canvas('canvas');
+    canvas.isDrawingMode = true;
+
+    var circle = new fabric.Circle({
+        left: 50,
+        top: 50,
+        fill: 'blue',
+        radius: 40
+    });
+
+    canvas.add(circle);
+    
+    var data;  
+      
+    document.getElementById('select').addEventListener("click",function(){
+      canvas.isDrawingMode = !canvas.isDrawingMode 
+    },false);  
+    
+    document.getElementById('save').addEventListener("click",function(){
+      data = JSON.stringify(canvas)
+    },false);
+      
+    document.getElementById('load').addEventListener("click",function(){
+      canvas.loadFromJSON(data).renderAll() 
+    },false);
+      
+  </script>  
+</body>
+</html>
