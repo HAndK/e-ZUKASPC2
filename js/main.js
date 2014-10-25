@@ -1,28 +1,32 @@
 var stage, label, shape, oldPt, oldMidPt, size, color;
-var fstTouchFlg = true, fstTouchX, fstTouchY;
+// ?pict=画像名 取得
+var picpath = "img/" + location.search.split("=")[1] + ".jpg";
 
 function init() {
+  // canvasの設定
   stage = new createjs.Stage("demoCanvas");
   stage.enableDOMEvents(true);
-  label = new createjs.Text("ぬりえ", "24px Arial");
-  label.x = label.y = 10;
-  
+  stage.canvas.height = window.innerHeight - 100;
+  stage.canvas.width = window.innerWidth;
+
+  // ぬりえ画像
+  backcontainer = new createjs.Container();
+  backImage = new createjs.Bitmap(picpath);
+  backcontainer.addChild(backImage);
+
   shape = new createjs.Shape();
-  stage.addChild(shape, label);
+  stage.addChild(shape, backcontainer);
   stage.mouseMoveOutside = true;
-  //set up our defaults:
-  //color = "#0FF";
-  //size = 10;
 
   stage.addEventListener("stagemousedown", mouseDown);
   stage.addEventListener("stagemouseup", mouseUp);
+  $('.btn').on("click", getColor);
 
   stage.update();
 }
-  
+
 function mouseDown(evt) {
   size = $("#setSize").val();
-  color = $("#setColor").val();
   oldPt = new createjs.Point(stage.mouseX, stage.mouseY);
   oldMidPt = oldPt;
   stage.addEventListener("stagemousemove", mouseMove);
@@ -45,4 +49,9 @@ function mouseMove(evt) {
   oldMidPt.y = midPt.y;
 
   stage.update();
+}
+
+// 色選択
+function getColor() {
+  color = $(this).css("background-color");
 }
