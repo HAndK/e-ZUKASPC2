@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="../css/paint.css"rel="stylesheet" >
+<!-- bootstrap css -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/easeljs-0.7.1.min.js"></script>
+<script src="../js/tweenjs-0.5.1.min.js"></script>
+<script src="../js/preloadjs-0.4.1.min.js"></script>
+<script src="../js/paint.js"></script>
+<!-- bootstrap js -->
+<script src="../js/bootstrap.js"></script>
+</head>
+<body onload="init()" id="paint-back">
+<!-- paint-form -->
+  <div class="well" id="paint-form">
+    <img src="../img/balloon_color.gif" alt="バルーン">
+    <input type="button" id="paint-btn" value="ぬりえをはじめる！！" onclick="location.href='#canvas-modal'">
+    <input type="button" id="paint-btn" value="選択画面に戻る" onclick="location.href='../select.html'">
+  </div>
+<!-- end-modal -->
+<!-- modal -->
+<div id="contents">
+  <div id="modal">
+    <div id="canvas-modal">
+      <a href="#" class="close_overlay">×</a>
+      <span class="modal_window">
+        <div class="container main-content">
+          <div class="row">
+            <div class="col-md-9 content-area">
+              <canvas id="demoCanvas"></canvas>
+            </div>
+            <div class="col-md-3 sidebar">
+              <button type="button" id="colorbtn" class="btn" style="background-color :#FF0000"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#00FF00"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#0000FF"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#FFFF00"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#00FFFF"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#FF00FF"></button>
+              <br />
+              <button type="button" id="colorbtn" class="btn" style="background-color :#A5FF00"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#A500FF"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#FFA500"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#00A5FF"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#000000"></button>
+              <button type="button" id="colorbtn" class="btn" style="background-color :#FFFFFF"></button>
+              <input type="range" id="setSize" min="5" max="30">
+              <br />
+              <a href="#">【×】CLOSE</a>
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+<!-- end-modal -->
+</body>
+</html>
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-md-9 content-area">
+    </div><!--/.content-area-->
+    <div class="col-md-3 sidebar">
+    </div><!--/.sidebar-->
+  </div>
+</div><!--/.main-content-->
