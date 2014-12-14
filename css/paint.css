@@ -108,9 +108,9 @@ p {
 .modal_window {
     top: 50%;
     left: 50%;
-    margin: -330px 0 0 -622px;
-    width: 1240px;
-    height: 660px;
+    margin: -350px 0 0 -640px;
+    width: 1275px;
+    height: 700px;
     text-align: center;
     display: block;
     background: #fff;

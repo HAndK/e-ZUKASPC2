@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<!-- モバイル端末で表示する際に必要 -->
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
 <link href="../css/paint.css"rel="stylesheet" >
 <!-- bootstrap css -->
 <link href="../css/bootstrap.css" rel="stylesheet">
@@ -21,7 +23,7 @@
     <input type="button" id="paint-btn" value="選択画面に戻る" onclick="location.href='../select.html'">
   </div>
 <!-- end-modal -->
-<!-- modal -->
+<!-- paint-modal -->
 <div id="contents">
   <div id="modal">
     <div id="canvas-modal">
@@ -48,6 +50,7 @@
               <button type="button" id="colorbtn" class="btn" style="background-color :#FFFFFF"></button>
               <input type="range" id="setSize" min="5" max="30">
               <br />
+              <button class="btn btn-danger" data-toggle="modal" data-target="#sample-modal-balloon">お手本</button>
               <a href="#">【×】CLOSE</a>
             </div>
           </div>
@@ -57,14 +60,19 @@
   </div>
 </div>
 <!-- end-modal -->
+
+<!-- modal -->
+<!-- sample-modal -->
+<div class="modal fade" role="dialog" area-hidden="true" id="sample-modal-balloon">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="../img/balloon_color.gif" alt="バルーン">
+        <button type="button" class="btn btn-primary btn-block" id="modal-close" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end-modal -->
 </body>
 </html>
-
-<div class="container main-content">
-  <div class="row">
-    <div class="col-md-9 content-area">
-    </div><!--/.content-area-->
-    <div class="col-md-3 sidebar">
-    </div><!--/.sidebar-->
-  </div>
-</div><!--/.main-content-->
