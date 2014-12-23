@@ -2,6 +2,14 @@ var stage, label, shape, oldPt, oldMidPt, size, color, actBtn;
 // ?pict=画像名 取得
 //var picpath = "img/" + location.search.split("=")[1] + ".jpg";
 
+var manifest = [
+{src:"../img/balloon.gif", id:"balloon"}
+];
+
+preload = new createjs.LoadQueue(false); // LoadQueueクラスのインスタンスを作成する
+preload.loadManifest(manifest); // 配列manifestを先読みする
+//preload.addEventListener("complete",handleImageLoad);// 読み込み完了後にhandleImageLoad関数を実行する
+
 function init() {
   // canvasの設定
   var picpath = "../img/balloon.gif"
@@ -14,6 +22,8 @@ function init() {
   // ぬりえ画像
   backcontainer = new createjs.Container();
   backImage = new createjs.Bitmap(picpath);
+    backImage.x　= 200;
+  backImage.y　= 8;
   backcontainer.addChild(backImage);
 
   shape = new createjs.Shape();
